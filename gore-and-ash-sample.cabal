@@ -1,0 +1,92 @@
+name:                gore-and-ash-sample
+version:             0.1.0.0
+synopsis:            Initial project template from stack
+description:         Please see README.md
+homepage:            https://github.com/ncrashed/gore-and-ash-sample#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Anton Gushcha
+maintainer:          ncrashed@gmail.com
+copyright:           Anton Gushcha 2016
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+flag examples
+  description: Enable building of examples
+  default:     False
+
+library
+  hs-source-dirs:      src
+  exposed-modules:
+    Game.GoreAndAsh.ModuleSample
+    Game.GoreAndAsh.ModuleSample.API
+    Game.GoreAndAsh.ModuleSample.Module
+  build-depends:
+      base               >= 4.7      && < 5
+    , bytestring         >= 0.10     && < 0.11
+    , exceptions         >= 0.8      && < 0.9
+    , gore-and-ash       >= 2.0.0.0  && < 2.1
+    , monad-control      >= 1.0      && < 1.1
+    , mtl                >= 2.2      && < 2.3
+    , text               >= 1.2.1    && < 1.3
+    , transformers       >= 0.4.2    && < 0.6
+    , transformers-base  >= 0.4.4    && < 0.5
+
+  default-language:    Haskell2010
+  default-extensions:
+    DataKinds
+    DeriveGeneric
+    FlexibleInstances
+    FunctionalDependencies
+    GeneralizedNewtypeDeriving
+    InstanceSigs
+    MultiParamTypeClasses
+    OverloadedStrings
+    RankNTypes
+    RecordWildCards
+    ScopedTypeVariables
+    TypeFamilies
+    UndecidableInstances
+
+source-repository head
+  type:     git
+  location: https://github.com/ncrashed/gore-and-ash-sample
+
+executable gore-and-ash-sample-example01
+  if flag(examples)
+    buildable: True
+  else
+    buildable: False
+
+  hs-source-dirs:     examples
+  main-is:            Example01.hs
+  default-language:   Haskell2010
+  build-depends:
+      base                  >= 4.7      && < 5
+    , bytestring            >= 0.10     && < 0.11
+    , exceptions            >= 0.8      && < 0.9
+    , gore-and-ash          >= 2.0      && < 2.1
+    , gore-and-ash-logging  >= 3.0      && < 3.1
+    , gore-and-ash-sample
+    , mtl                   >= 2.2      && < 2.3
+    , text                  >= 1.2.1    && < 1.3
+
+  default-extensions:
+    BangPatterns
+    DeriveFunctor
+    DeriveGeneric
+    FlexibleContexts
+    FlexibleInstances
+    FunctionalDependencies
+    GeneralizedNewtypeDeriving
+    MultiParamTypeClasses
+    OverloadedStrings
+    RecordWildCards
+    ScopedTypeVariables
+    StandaloneDeriving
+    TypeFamilies
+    UndecidableInstances
+
+  ghc-options: -threaded
