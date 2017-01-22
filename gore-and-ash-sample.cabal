@@ -2,13 +2,13 @@ name:                gore-and-ash-sample
 version:             0.1.0.0
 synopsis:            Initial project template from stack
 description:         Please see README.md
-homepage:            https://github.com/ncrashed/gore-and-ash-sample#readme
+homepage:            https://github.com/github-username/gore-and-ash-sample#readme
 license:             BSD3
 license-file:        LICENSE
-author:              Anton Gushcha
-maintainer:          ncrashed@gmail.com
-copyright:           Anton Gushcha 2016
-category:            Web
+author:              author-name
+maintainer:          author-email
+copyright:           author-copyright
+category:            Game
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
